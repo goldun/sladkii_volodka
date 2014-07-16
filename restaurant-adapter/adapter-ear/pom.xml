@@ -36,6 +36,28 @@
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                 </configuration>
             </plugin>
+            <plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.2.Final</version>
+
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<goals>
+							<goal>undeploy</goal>
+						</goals>
+						<configuration>
+							<ignoreMissingDeployment>true</ignoreMissingDeployment>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
         </plugins>
     </build>
     

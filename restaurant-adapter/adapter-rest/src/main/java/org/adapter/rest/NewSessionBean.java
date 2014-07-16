@@ -4,6 +4,9 @@
  */
 package org.adapter.rest;
 
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 
@@ -11,11 +14,16 @@ import javax.ejb.LocalBean;
  *
  * @author martin
  */
-@Stateless
+@Singleton
+@Startup
 @LocalBean
 public class NewSessionBean {
 
+	@PostConstruct
     public void businessMethod() {
+		@SuppressWarnings("unused")
+		int i = 1;
+		System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
     }
 
     // Add business logic below. (Right-click in editor and choose

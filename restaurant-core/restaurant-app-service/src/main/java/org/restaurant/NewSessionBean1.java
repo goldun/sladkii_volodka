@@ -13,7 +13,7 @@ import javax.ejb.LocalBean;
  */
 @Stateless
 @LocalBean
-public class NewSessionBean {
+public class NewSessionBean1 {
 
     public void businessMethod() {
     }
