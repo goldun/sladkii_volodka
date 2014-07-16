@@ -3,7 +3,7 @@
 		Example
 		-------------------------------------------------------------------------------------------------------
 		<profile>
-			<id>wildfly-adapters</id>
+			<id>wildfly-web</id>
 			<properties>
 				<wildfly-home>/home/evdut/projects/Restaurant
 					Project/wildfly-8.1.0.Final</wildfly-home>
