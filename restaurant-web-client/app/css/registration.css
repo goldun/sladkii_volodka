@@ -1,0 +1,21 @@
+form {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+form .input-label{
+    display: inline-block;
+    text-align: right;
+    width: 49%;
+}
+form .input{
+    display: inline-block;
+    text-align: left;
+    width: 49%;
+}
+
+form div {
+    margin-top: 5px;
+}

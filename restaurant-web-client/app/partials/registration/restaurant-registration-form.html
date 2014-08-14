@@ -1,0 +1,49 @@
+<div class="registration-form">
+    <form novalidate>
+    <div class="animate-show" ng-show="isStepActive(1)">
+        <h2>General</h2>
+        <div class="input-label">Type: </div>
+        <div class="input">
+             <select multiple="multiple" ng-model="restaurant.type" ng-options="type for type in restaurantTypes"></select>
+        </div>
+        <div class="input-label">Name: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.name" required />
+        </div>
+        <div class="input-label">Logo: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.logo" />
+        </div>
+        <button ng-click="toStep(2)">Continue</button>
+    </div>
+    <div class="animate-show" ng-show="isStepActive(2)">
+        <h2>Contacts</h2>
+        <div class="input-label">E-mail: </div>
+        <div class="input">
+            <input type="email" ng-model="restaurant.email" required />
+        </div>
+        <div class="input-label">Telephone: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.phone" required />
+        </div>
+        <div class="input-label">Fax: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.fax" />
+        </div>
+        <div class="input-label">Country: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.country" required />
+        </div>
+        <div class="input-label">City: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.city" required />
+        </div>
+        <div class="input-label">Address: </div>
+        <div class="input">
+            <input type="text" ng-model="restaurant.address" required />
+        </div>
+        <button ng-click="toStep(1)">Back</button>
+        <button ng-click="register(restaurant)" ng-disabled="form.$invalid">Register</button>
+    </div>
+    </form>
+</div>

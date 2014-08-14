@@ -1,0 +1,53 @@
+<div class="registration-form">
+    <form novalidate>
+    <div class="animate-show" ng-show="isStepActive(1)">
+        <h2>General</h2>
+        <div class="input-label">Type: </div>
+        <div class="input">
+             <select ng-model="supplier.type" ng-options="type for type in supplierTypes"></select>
+        </div>
+        <div class="input-label">E-mail: </div>
+        <div class="input">
+            <input type="email" ng-model="supplier.email" required />
+        </div>
+        <div ng-show="isCompany()">
+            <div class="input-label">Company name: </div>
+            <div class="input">
+                <input type="text" ng-model="supplier.companyName" />
+            </div>
+        </div>
+        <div ng-show="!isCompany()">
+            <div class="input-label">Full name: </div>
+            <div class="input">
+                <input type="text" ng-model="supplier.personName" />
+            </div>
+        </div>
+        <button ng-click="toStep(2)">Continue</button>
+    </div>
+    <div class="animate-show" ng-show="isStepActive(2)">
+        <h2>Contacts</h2>
+        <div class="input-label">Telephone: </div>
+        <div class="input">
+            <input type="text" ng-model="supplier.phone" required />
+        </div>
+        <div class="input-label">Fax: </div>
+        <div class="input">
+            <input type="text" ng-model="supplier.fax" />
+        </div>
+        <div class="input-label">Country: </div>
+        <div class="input">
+            <input type="text" ng-model="supplier.country" required />
+        </div>
+        <div class="input-label">City: </div>
+        <div class="input">
+            <input type="text" ng-model="supplier.city" required />
+        </div>
+        <div class="input-label">Address: </div>
+        <div class="input">
+            <input type="text" ng-model="supplier.address" required />
+        </div>
+        <button ng-click="toStep(1)">Back</button>
+        <button ng-click="register(supplier)" ng-disabled="form.$invalid">Register</button>
+    </div>
+    </form>
+</div>
