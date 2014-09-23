@@ -1,0 +1,5 @@
+# remove all deployments from the domain
+
+undeploy --server-groups=sladkii-volodka-web-server restaurant-web.war
+undeploy --server-groups=sladkii-volodka-adapter-server restaurant-adapter.ear
+undeploy --server-groups=sladkii-volodka-core-server restaurant-core.ear

@@ -1,0 +1,5 @@
+batch
+deploy restaurant-core/restaurant-core-ear/target/restaurant-core.ear --server-groups=sladkii-volodka-core-server
+deploy restaurant-adapter/adapter-ear/target/restaurant-adapter.ear --server-groups=sladkii-volodka-adapter-server
+deploy restaurant-web/target/restaurant-web.war --server-groups=sladkii-volodka-web-server
+run-batch

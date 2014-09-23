@@ -58,7 +58,7 @@ public class Region implements IEntity {
     /** The city list. */
     @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "region_id", referencedColumnName = "region_id")
-    @MapKey(name = "city_code")
+    @MapKey(name = "cityCode")
     private Map<String, City> cities;
 
     /**

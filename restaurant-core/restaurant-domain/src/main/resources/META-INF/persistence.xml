@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="restaurant">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>org.restaurant.dictionary.model.Country</class>
+        <class>org.restaurant.dictionary.model.Region</class>
+        <class>org.restaurant.dictionary.model.City</class>
+        <class>org.restaurant.restaurant.model.Restaurant</class>
+        <class>org.restaurant.restaurant.model.RestaurantAddress</class>
+        <class>org.restaurant.restaurant.model.RestaurantImage</class>
+        <class>org.restaurant.restaurant.model.RestaurantPhone</class>
+        <class>org.restaurant.supplier.model.RestaurantStaff</class>
+        <class>org.restaurant.supplier.model.SupplierCompany</class>
+        <class>org.restaurant.supplier.model.SupplierAddress</class>
+        <class>org.restaurant.supplier.model.SupplierImage</class>
+        <class>org.restaurant.supplier.model.SupplierPhone</class>
+        <class>org.restaurant.supplier.model.SupplierStaff</class>
+        <class>org.restaurant.customer.model.Customer</class>
+        <class>org.restaurant.customer.model.CustomerImage</class>
+    </persistence-unit>
+</persistence>

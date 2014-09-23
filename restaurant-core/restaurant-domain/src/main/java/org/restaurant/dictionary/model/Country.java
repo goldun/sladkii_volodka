@@ -53,7 +53,7 @@ public class Country implements IEntity {
     /** The region list. */
     @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "country_id", referencedColumnName = "country_id")
-    @MapKey(name = "region_code")
+    @MapKey(name = "regionCode")
     private Map<String, Region> regions;
 
     /**

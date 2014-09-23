@@ -1,0 +1,13 @@
+<div class="login-form">
+    <form novalidate>
+        <div class="input-label">E-mail: </div>
+        <div class="input">
+            <input type="email" ng-model="user.email" required />
+        </div>
+        <div class="input-label">Password: </div>
+        <div class="input">
+            <input type="password" ng-model="user.password" required /><br />
+        </div>
+        <button ng-click="login(user)" ng-disabled="form.$invalid">Sign In</button>
+    </form>
+</div>

@@ -4,6 +4,12 @@
 
 var restaurantControllers = angular.module('restaurantControllers', []);
 
+restaurantControllers.controller('LoginCtrl', [ '$scope', function($scope) {
+    $scope.login = function(user) {
+        // $scope.user = angular.copy(user);
+    };
+} ]);
+
 restaurantControllers.controller('ClientSignUpCtrl', [ '$scope',
         function($scope) {
             $scope.register = function(client) {
@@ -29,8 +35,10 @@ restaurantControllers.controller('RestaurantSignUpCtrl', [ '$scope',
 
 restaurantControllers.controller('SupplierSignUpCtrl', [ '$scope',
         function($scope) {
-            $scope.supplier={'type':'company'};
-            $scope.supplierTypes = [ 'company', 'person'];
+            $scope.supplier = {
+                'type' : 'company'
+            };
+            $scope.supplierTypes = [ 'company', 'person' ];
             $scope.currentStep = 1;
 
             $scope.toStep = function(step) {
@@ -39,10 +47,15 @@ restaurantControllers.controller('SupplierSignUpCtrl', [ '$scope',
             $scope.isStepActive = function(step) {
                 return $scope.currentStep == step;
             };
-            $scope.isCompany = function(){
+            $scope.isCompany = function() {
                 return $scope.supplier.type == 'company';
             };
             $scope.register = function(supplier) {
                 $scope.supplier = angular.copy(supplier);
             };
+        } ]);
+
+restaurantControllers.controller('ClientCPCtrl', [ '$scope',
+        function($scope) {
+            $scope.client = "Client";
         } ]);

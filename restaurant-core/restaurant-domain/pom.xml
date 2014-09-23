@@ -3,13 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>restaurant-core</artifactId>
-        <groupId>com.restaurant.core</groupId>
+        <groupId>com.sladkii.volodka</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.restaurant.core</groupId>
     <artifactId>restaurant-domain</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>ejb</packaging>
 
     <name>restaurant-domain</name>

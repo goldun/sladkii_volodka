@@ -1,84 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.restaurant.core</groupId>
-	<artifactId>restaurant-core</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>restaurant-core</artifactId>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.sladkii.volodka</groupId>
+        <artifactId>sladkii-volodka</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.0.2.Final</version>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.wildfly.plugins</groupId>
-				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.0.2.Final</version>
+                <configuration>
+                    <hostname>${wildfly-hostname}</hostname>
+                    <port>${wildfly-port}</port>
+                    <skip>true</skip>
+                    <force>true</force>
+                    <username>${wildfly.username}</username>
+                    <password>${wildfly.password}</password>
+                </configuration>
 
-				<configuration>
-					<hostname>${wildfly-hostname}</hostname>
-					<port>${wildfly-port}</port>
-					<skip>true</skip>
-					<force>true</force>
-					<username>${wildfly.username}</username>
-					<password>${wildfly.password}</password>
-				</configuration>
+                <executions>
+                    <execution>
+                        <id>deploy_jdbc_driver</id>
+                        <goals>
+                            <goal>deploy-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>org.postgresql</groupId>
+                            <artifactId>postgresql</artifactId>
+                            <name>postgresql.jar</name>
+                        </configuration>
+                    </execution>
 
-				<executions>
-					<execution>
-						<id>deploy_jdbc_driver</id>
-						<goals>
-							<goal>deploy-artifact</goal>
-						</goals>
-						<configuration>
-							<groupId>org.postgresql</groupId>
-							<artifactId>postgresql</artifactId>
-							<name>postgresql.jar</name>
-						</configuration>
-					</execution>
+                    <!-- Add a data source -->
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
 
-					<!-- Add a data source -->
-					<execution>
-						<id>default-cli</id>
-						<goals>
-							<goal>add-resource</goal>
-						</goals>
-						<configuration>
+                            <address>subsystem=datasources,data-source=restDatasource</address>
+                            <resources>
+                                <resource>
+                                    <properties>
+                                        <connection-url>${jdbc.connection.url}</connection-url>
+                                        <jndi-name>${jdbc.jndi.name}</jndi-name>
+                                        <enabled>true</enabled>
+                                        <enable>true</enable>
+                                        <user-name>postgres</user-name>
+                                        <password>postgres</password>
+                                        <driver-name>postgresql.jar</driver-name>
+                                        <use-ccm>false</use-ccm>
+                                    </properties>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
 
-							<address>subsystem=datasources,data-source=restDatasource</address>
-							<resources>
-								<resource>
-									<properties>
-										<connection-url>${jdbc.connection.url}</connection-url>
-										<jndi-name>${jdbc.jndi.name}</jndi-name>
-										<enabled>true</enabled>
-										<enable>true</enable>
-										<user-name>postgres</user-name>
-										<password>postgres</password>
-										<driver-name>postgresql.jar</driver-name>
-										<use-ccm>false</use-ccm>
-									</properties>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1100-jdbc41</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.3-1100-jdbc41</version>
-			<scope>runtime</scope>
-		</dependency>
-	</dependencies>
-
-	<modules>
-		<module>restaurant-domain</module>
-		<module>restaurant-app-service</module>
-		<module>restaurant-core-ear</module>
-	</modules>
+    <modules>
+        <module>restaurant-domain</module>
+        <module>restaurant-app-service</module>
+        <module>restaurant-core-ear</module>
+    </modules>
 </project>

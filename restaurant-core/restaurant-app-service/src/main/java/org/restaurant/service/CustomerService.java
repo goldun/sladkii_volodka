@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.restaurant;
+package org.restaurant.service;
 
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -13,7 +13,7 @@ import javax.ejb.LocalBean;
  */
 @Stateless
 @LocalBean
-public class NewSessionBean1 {
+public class CustomerService {
 
     public void businessMethod() {
     }
