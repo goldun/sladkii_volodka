@@ -18,9 +18,9 @@
         </license>
     </licenses>
     <modules>
-        <module>restaurant-adapter</module>
-        <module>restaurant-core</module>
-        <module>restaurant-web</module>
+        <module>eatoos-adapter</module>
+        <module>eatoos-core</module>
+        <module>eatoos-web</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

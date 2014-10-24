@@ -11,13 +11,13 @@
         <class>net.eatoos.restaurant.model.RestaurantAddress</class>
         <class>net.eatoos.restaurant.model.RestaurantImage</class>
         <class>net.eatoos.restaurant.model.RestaurantPhone</class>
-        <class>net.eatoos.supplier.model.RestaurantStaff</class>
+        <class>net.eatoos.restaurant.model.RestaurantStaff</class>
         <class>net.eatoos.supplier.model.SupplierCompany</class>
         <class>net.eatoos.supplier.model.SupplierAddress</class>
         <class>net.eatoos.supplier.model.SupplierImage</class>
         <class>net.eatoos.supplier.model.SupplierPhone</class>
         <class>net.eatoos.supplier.model.SupplierStaff</class>
-        <class>org.restaurant.customer.model.Customer</class>
-        <class>org.restaurant.customer.model.CustomerImage</class>
+        <class>net.eatoos.customer.model.Customer</class>
+        <class>net.eatoos.customer.model.CustomerImage</class>
     </persistence-unit>
 </persistence>

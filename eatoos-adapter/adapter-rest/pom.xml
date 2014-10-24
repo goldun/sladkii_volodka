@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>restaurant-adapter</artifactId>
+        <artifactId>eatoos-adapter</artifactId>
         <groupId>net.eatoos</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>adapter-rest</artifactId>
+    <artifactId>eatoos-adapter-rest</artifactId>
     <packaging>ejb</packaging>
 
     <name>adapter-rest</name>
@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>restaurant-app-service</artifactId>
+            <artifactId>eatoos-app-service</artifactId>
             <version>${project.version}</version>
             <type>ejb-client</type>
         </dependency>

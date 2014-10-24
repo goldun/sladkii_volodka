@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>restaurant-core</artifactId>
+    <artifactId>eatoos-core</artifactId>
     <packaging>pom</packaging>
     <parent>
         <groupId>net.eatoos</groupId>
@@ -80,8 +80,8 @@
     </dependencies>
 
     <modules>
-        <module>restaurant-domain</module>
-        <module>restaurant-app-service</module>
-        <module>restaurant-core-ear</module>
+        <module>domain</module>
+        <module>app-service</module>
+        <module>core-ear</module>
     </modules>
 </project>
